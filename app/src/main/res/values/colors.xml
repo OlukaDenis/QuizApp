@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0088cc</color>
+    <color name="colorPrimaryDark">#00334d</color>
+    <color name="colorAccent"> #007399</color>
+
+    <color name="bg">#BADCF4</color>
+
+    <color name="btn">#007399</color>
+    
+    <color name="text_color">#001a66</color>
+    <color name="text_questions">#404040</color>
+    <color name="qn_bg">#eeeeee</color>
+</resources>

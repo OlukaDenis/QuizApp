@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Quiz</string>
+
+    <string name="heading"><u>Android Quiz</u></string>
+    <string name="desc">Each question has a score of <b>one</b> point</string>
+
+
+    <!--Questions headers-->
+    <string name="one">Question 1</string>
+    <string name="two">Question 2</string>
+    <string name="three">Question 3</string>
+    <string name="four">Question 4</string>
+    <string name="five">Question 5</string>
+    <string name="six">Question 6</string>
+    <string name="seven">Question 7</string>
+    <string name="eight">Question 8</string>
+    <string name="nine">Question 9</string>
+    <string name="ten">Question 10</string>
+
+    <!--The question one-->
+    <string name="question1"> What is Android?</string>
+    <string name="q_a">Android is a stack of softwares for mobility</string>
+    <string name="q_b">Google mobile device name</string>
+    <string name="q_c">Virtual Machine</string>
+    <string name="q_d">None of the above</string>
+
+    <!--The question two-->
+    <string name="question2">How to kill an activity in Android?</string>
+    <string name="q2_a">finish()</string>
+    <string name="q2_b">kill()</string>
+    <string name="q2_c">finishActivity(int requestCode)</string>
+    <string name="q2_d">stop()</string>
+
+
+    <!--The question three-->
+    <string name="question3">Who is the founder of Google?</string>
+
+    <!--The question four-->
+    <string name="question4">Android Logo is inspired from?</string>
+    <string name="q4_a">Super Mario</string>
+    <string name="q4_b">Roadrush</string>
+    <string name="q4_c">The Gauntlet</string>
+    <string name="q4_d">Contra 4</string>
+
+
+    <!--The question five-->
+    <string name="question5">Is it possible to have one activity without UI in android?</string>
+    <string name="q5_a">Yes</string>
+    <string name="q5_b">No</string>
+
+
+    <!--The question six-->
+    <string name="question6">What is ANR in Android?</string>
+    <string name="q6_a">Dialog box is called as ANR</string>
+    <string name="q6_b">Application Not Responding</string>
+    <string name="q6_c">Android Not Responding</string>
+    <string name="q6_d">None of the above</string>
+
+
+    <!--The question seven-->
+    <string name="question7">The root element of AndroidManifest.xml is ?<u>      </u></string>
+
+    <!--The question eight-->
+    <string name="question8">The first smartphone to run on Android platform was?</string>
+    <string name="q8_a">HTC Dream</string>
+    <string name="q8_b">Motorolla</string>
+    <string name="q8_c">Nexus </string>
+    <string name="q8_d">Samsung</string>
+
+    <!--The question seven-->
+    <string name="question9">We can pass Data between activities using <u>      </u></string>
+
+    <!--Button-->
+    <string name="btn">Submit answer</string>
+    <string name="rst">Reset</string>
+
+    <!--answer to question 1-->
+    <string name="answer_qn1">Android is a stack of softwares for mobility</string>
+
+    <!--answer to question 2-->
+    <string name="answer_qn2">kill()</string>
+
+    <!--answer to question 3-->
+    <string name="answer_qn3">Larry Page</string>
+
+    <!--answer to question 7-->
+    <string name="answer_qn7">Manifest</string>
+
+    <!--answer to question 9-->
+    <string name="answer_qn9">Intents</string>
+</resources>
