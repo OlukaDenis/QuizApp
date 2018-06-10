@@ -61,6 +61,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:text="@string/q_a"
+                android:checked="true"
                 android:textSize="@dimen/text_size_small" />
 
             <CheckBox
@@ -122,6 +123,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:text="@string/q2_a"
+                android:checked="true"
                 android:textSize="@dimen/text_size_small" />
 
             <CheckBox
@@ -180,6 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:text="@string/answer_qn3"
                 android:hint="@string/ans"/>
 
         </LinearLayout><!--end of question 3-->
@@ -231,6 +234,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:text="@string/q4_c"
+                android:checked="true"
                 android:textSize="@dimen/text_size_small" />
 
             <CheckBox
@@ -279,6 +283,7 @@
                     android:layout_marginLeft="@dimen/margin_medium"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:text="@string/q5_a"
+                    android:checked="true"
                     android:textSize="@dimen/text_size_small" />
 
                 <RadioButton
@@ -333,6 +338,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:text="@string/q6_b"
+                android:checked="true"
                 android:textSize="@dimen/text_size_small" />
 
             <CheckBox
@@ -382,6 +388,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:text="@string/answer_qn7"
                 android:hint="@string/ans"/>
 
         </LinearLayout><!--End of question 7-->
@@ -415,6 +422,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:text="@string/q8_a"
+                android:checked="true"
                 android:textSize="@dimen/text_size_small" />
 
             <CheckBox
@@ -473,26 +481,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
+                android:text="@string/answer_qn9"
                 android:hint="@string/ans"/>
 
 
 
         </LinearLayout><!--End of question 7-->
 
-        <!--Submit button -->
 
-        <Button
-            android:id="@+id/submit_answer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_small"
-            android:background="@drawable/buttons"
-            android:onClick="getAnswer"
-            android:padding="@dimen/padding_medium"
-            android:text="@string/btn"
-            android:textColor="@color/qn_bg"
-            android:textSize="@dimen/text_size_medium" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -500,25 +496,8 @@
             android:layout_marginBottom="@dimen/margin_small"
             android:layout_marginTop="@dimen/margin_small">
 
-            <!--Reset button-->
-            <Button
-                android:id="@+id/reset_questions"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/btn"
-                android:onClick="resetBtn"
-                android:padding="@dimen/padding_medium"
-                android:text="@string/rst"
-                android:textColor="@color/qn_bg"
-                android:textSize="@dimen/text_size_medium" />
-            <View
-                android:layout_width="3dp"
-                android:layout_height="wrap_content"
-                android:background="@color/qn_bg"/>
 
-            <!--Answer button-->
+            <!--Back button-->
             <Button
                 android:id="@+id/answers"
                 android:layout_weight="1"
@@ -526,9 +505,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/btn"
-                android:onClick="goAnswer"
+                android:onClick="getBack"
                 android:padding="@dimen/padding_medium"
-                android:text="@string/get_answer"
+                android:text="@string/back"
                 android:textColor="@color/qn_bg"
                 android:textSize="@dimen/text_size_medium" />
 

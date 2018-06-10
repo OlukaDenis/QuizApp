@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="activity_answers">Answers</string>
 
     <string name="heading"><u>Android Quiz</u></string>
     <string name="desc">Each question has a score of <b>one</b> point</string>
+    <string name="ans">Your answer</string>
 
 
     <!--Questions headers-->
@@ -58,7 +60,7 @@
 
 
     <!--The question seven-->
-    <string name="question7">The root element of AndroidManifest.xml is ?<u>      </u></string>
+    <string name="question7">The root element of AndroidManifest.xml is </string>
 
     <!--The question eight-->
     <string name="question8">The first smartphone to run on Android platform was?</string>
@@ -72,13 +74,16 @@
 
     <!--Button-->
     <string name="btn">Submit answer</string>
-    <string name="rst">Reset</string>
+    <string name="rst">Retry</string>
+    <string name="get_answer">Answers</string>
+    <string name="back">Back</string>
+
 
     <!--answer to question 1-->
     <string name="answer_qn1">Android is a stack of softwares for mobility</string>
 
     <!--answer to question 2-->
-    <string name="answer_qn2">kill()</string>
+    <string name="answer_qn2">finish()</string>
 
     <!--answer to question 3-->
     <string name="answer_qn3">Larry Page</string>

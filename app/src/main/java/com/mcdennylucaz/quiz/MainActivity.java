@@ -1,9 +1,11 @@
 package com.mcdennylucaz.quiz;
-/**This app was created by Oluka Denis
+/**
+ * This app was created by Oluka Denis
  * June 2018
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -76,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         question5a = (RadioButton) findViewById(R.id.qn5_1);
         question5b = (RadioButton) findViewById(R.id.qn5_2);
-        question5 =  (RadioGroup) findViewById(R.id.question5);
+        question5 = (RadioGroup) findViewById(R.id.question5);
 
         question6a = (CheckBox) findViewById(R.id.qn6_1);
         question6b = (CheckBox) findViewById(R.id.qn6_2);
@@ -97,8 +99,22 @@ public class MainActivity extends AppCompatActivity {
      * The method that is called when the submit button is clicked
      */
     public void getAnswer(View view) {
+        //this checks whether the user has answered all the questions
+        if (
+                (!question1a.isChecked() && !question1b.isChecked() && !question1c.isChecked() && !question1d.isChecked()) ||
+                        (!question2a.isChecked() && !question2b.isChecked() && !question2c.isChecked() && !question2d.isChecked()) ||
+                        (!question4a.isChecked() && !question4b.isChecked() && !question4c.isChecked() && !question4d.isChecked()) |
+                                (!question5a.isChecked() && !question5b.isChecked()) ||
+                        (!question6a.isChecked() && !question6b.isChecked() && !question6c.isChecked() && !question6d.isChecked()) ||
+                        (!question8a.isChecked() && !question8b.isChecked() && !question8c.isChecked() && !question8d.isChecked())
+                ) {
+            Toast.makeText(this, "Please answer all the questions!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, "You have scored " + answers() + "/9 points", Toast.LENGTH_LONG).show();
+        }
 
-        Toast.makeText(this,"You have scored " +answers()+ " points",Toast.LENGTH_LONG).show();
+
     }
 
     /**
@@ -112,15 +128,25 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
         }
         //Checking question two
-        if(question2b.isChecked()){
+        if (question2a.isChecked()) {
             score += 1;
         }
 
         //Checking question three
+
+        /*question3a.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    question3a.setHint("");
+                }
+            }
+        });//this puts a label on the hint, got from stackoverflow*/
+
         String ans3 = question3a.getText().toString();
-        String answer3 =  getString(R.string.answer_qn3);
-        if (ans3.equals(answer3) || ans3.equals(answer3+" ")){
-            score +=1;
+        String answer3 = getString(R.string.answer_qn3);
+        if (ans3.equals(answer3) || ans3.equals(answer3 + " ")) {
+            score += 1;
         }
 
         //Checking question four
@@ -139,10 +165,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Checking question seven
+
+        /*question7a.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    question7a.setHint("");
+                }
+            }
+        });//this puts a label on the hint, got from stackoverflow*/
+
         String ans7 = question7a.getText().toString();
         String answer7 = getString(R.string.answer_qn7);//Fetching the answer from the string file
-        if (ans7.equals(answer7) || ans7.equals(answer7+" ")){
-            score +=1;
+        if (ans7.equals(answer7) || ans7.equals(answer7 + " ")) {
+            score += 1;
         }
 
         //Checking question eight
@@ -153,11 +189,9 @@ public class MainActivity extends AppCompatActivity {
         //Checking question nine
         String ans9 = question9a.getText().toString();
         String answer9 = getString(R.string.answer_qn9);
-        if (ans9.equals(answer9) || ans9.equals(answer9+" ")){
-            score +=1;
-        }
-
-        else {
+        if (ans9.equals(answer9) || ans9.equals(answer9 + " ")) {
+            score += 1;
+        } else {
 
         }
 
@@ -165,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Method  that is called when the reset button is clicked
-    public void resetBtn(View view){
+    public void resetBtn(View view) {
 
         question1a.setChecked(false);
         question1b.setChecked(false);
@@ -199,7 +233,29 @@ public class MainActivity extends AppCompatActivity {
         question8d.setChecked(false);
 
         question9a.setText("");
+
+        Toast.makeText(this, "Give it another try, this can be your chance", Toast.LENGTH_LONG).show();
     }
+
+
+    public void goAnswer(View view){
+        if (
+                (!question1a.isChecked() && !question1b.isChecked() && !question1c.isChecked() && !question1d.isChecked()) ||
+                        (!question2a.isChecked() && !question2b.isChecked() && !question2c.isChecked() && !question2d.isChecked()) ||
+                        (!question4a.isChecked() && !question4b.isChecked() && !question4c.isChecked() && !question4d.isChecked()) |
+                                (!question5a.isChecked() && !question5b.isChecked()) ||
+                        (!question6a.isChecked() && !question6b.isChecked() && !question6c.isChecked() && !question6d.isChecked()) ||
+                        (!question8a.isChecked() && !question8b.isChecked() && !question8c.isChecked() && !question8d.isChecked())
+                ) {
+            Toast.makeText(this, "Please submit your answers first!", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Intent intent = new Intent(this, Answers.class);
+            startActivity(intent);
+        }
+
+    }
+
 
     // This method hides the keyboard when the user clicks away from the EditText box
 
