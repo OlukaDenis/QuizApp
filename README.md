@@ -6,6 +6,8 @@ The app shows the an overall score as answered by the user, and also allows the 
 
 See the screeshots here:
 https://drive.google.com/open?id=1mZHL86X4HV8wJoJJM2_krj75pwlGAcGR
-  
+
+Get Generated APK:
+  https://drive.google.com/open?id=1W8ghdHwykaOkPSrJhmw5wKQHKpdc3IQV
 
 
