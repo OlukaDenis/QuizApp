@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mcdennylucaz.quiz">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mcdennylucaz.quiz"
+    android:versionCode="1"
+    android:versionName="quiz 1.0 "
+    tools:ignore="GradleOverrides">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="27" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/quiz"
+        android:icon="@drawable/quizzes"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/quiz"
+        android:roundIcon="@drawable/quizzes"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
