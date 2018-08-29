@@ -2,6 +2,8 @@ package com.mcdennylucaz.quiz;
 /**
  * This app was created by Oluka Denis
  * June 2018
+ * And it was uploaded to github on 06/6/2018
+ * The development of this app was totally  my own research and with the help form stackoverflow website
  */
 
 import android.content.Context;
@@ -25,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     String score_result = "";
 
     EditText name;
-    String nameEntry;
 
     CheckBox question1a;
     CheckBox question1b;
@@ -76,11 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
         //getting reference to the checkboxes
         name = (EditText) findViewById(R.id.username);
-       // nameEntry = name.getText().toString();
-        //if (TextUtils.isEmpty(nameEntry)) {
-          // Toast.makeText(getApplicationContext(), "You must provide your name before continuing", Toast.LENGTH_SHORT).show();
-      // }
-
 
         question1a = (CheckBox) findViewById(R.id.qn1_1);
         question1b = (CheckBox) findViewById(R.id.qn1_2);
@@ -121,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         question10b = (RadioButton) findViewById(R.id.qn10_2);
         question10 = (RadioGroup) findViewById(R.id.question10);
 
-        scores = (TextView) findViewById(R.id.score_view);
     }
 
     public void checkName(View view){
@@ -142,10 +137,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 //this checks whether the user has answered all the questions
-
-
                 if (
-
                          (!question1a.isChecked() && !question1b.isChecked() && !question1c.isChecked() && !question1d.isChecked()) ||
                                 (!question2a.isChecked() && !question2b.isChecked() && !question2c.isChecked() && !question2d.isChecked()) ||
                                 (!question4a.isChecked() && !question4b.isChecked() && !question4c.isChecked() && !question4d.isChecked()) |
@@ -165,9 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
                 else {
 
-                    //Fetching the user answers
-
-
+                    //Fetching the user selected answers
                     boolean one1 = question1a.isChecked();
                     boolean one2 = question1b.isChecked();
                     boolean one3 = question1c.isChecked();
@@ -276,10 +266,11 @@ public class MainActivity extends AppCompatActivity {
                     if (ten2) {
                         score_result += "Qn 10: " + getString(R.string.q10_b) + "\n";
                     }
-
-                    scores.setText("Name: "+name.getText().toString() +" \nYour points:  " + answers() + "/10 \n\n" + score_result);
-                    scores.setVisibility(View.VISIBLE);
-                    //Toast.makeText(this, "You have scored " + answers() + "/9 points", Toast.LENGTH_LONG).show();
+                    //This is the array of the total scores and the selected answers
+                    String username= name.getText().toString();
+                    Toast.makeText(MainActivity.this, "Name: "+username+" \nYour points:  " + answers() + "/10 \n\n" + score_result, Toast.LENGTH_LONG).show();
+                    //scores.setText("Name: "+username+" \nYour points:  " + answers() + "/10 \n\n" + score_result);
+                    //scores.setVisibility(View.VISIBLE);
                 }
             }
         })
@@ -295,92 +286,71 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method that checks the answer in the checkboxes
+     *This checks the correct answers in the checkboxes, textfields and radio buttons
      */
     public int answers() {
         int score = 0;
 
         //Checking question one
-        if (question1a.isChecked()) {
-            score += 1;
+        if (question1a.isChecked() && !question1b.isChecked() && !question1c.isChecked() && !question1d.isChecked()) {
+            score ++;
         }
         //Checking question two
-        if (question2a.isChecked()) {
-            score += 1;
+        if (question2a.isChecked() && !question2b.isChecked() && !question2c.isChecked() && !question2d.isChecked()) {
+            score ++;
         }
-
-        //Checking question three
-
-        /*question3a.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus){
-                    question3a.setHint("");
-                }
-            }
-        });//this puts a label on the hint, got from stackoverflow*/
 
         String ans3 = question3a.getText().toString();
         String answer3 = getString(R.string.answer_qn3);
         if (ans3.equals(answer3) || ans3.equals(answer3 + " ")) {
-            score += 1;
+            score ++;
         }
 
         //Checking question four
-        if (question4c.isChecked()) {
-            score += 1;
+        if (question4c.isChecked() && !question4a.isChecked() && !question4b.isChecked() && !question4d.isChecked()) {
+            score ++;
         }
 
         //Checking question five
         if (question5a.isChecked()) {
-            score += 1;
+            score ++;;
         }
 
         //Checking question six
-        if (question6b.isChecked()) {
-            score += 1;
+        if (question6b.isChecked() && !question6a.isChecked() && !question6c.isChecked() && !question6d.isChecked()) {
+            score ++;
         }
-
-        //Checking question seven
-
-        /*question7a.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus){
-                    question7a.setHint("");
-                }
-            }
-        });//this puts a label on the hint, got from stackoverflow*/
 
         String ans7 = question7a.getText().toString();
         String answer7 = getString(R.string.answer_qn7);//Fetching the answer from the string file
         if (ans7.equals(answer7) || ans7.equals(answer7 + " ")) {
-            score += 1;
+            score ++;
         }
 
         //Checking question eight
-        if (question8a.isChecked()) {
-            score += 1;
+        if (question8a.isChecked() && !question8b.isChecked() && !question8c.isChecked() && !question8d.isChecked()) {
+            score ++;
         }
 
         //Checking question nine
         String ans9 = question9a.getText().toString();
         String answer9 = getString(R.string.answer_qn9);
         if (ans9.equals(answer9) || (ans9.equals("Intent")) || ans9.equals(answer9 + " ") || (ans9.equals("Intent ")) ) {
-            score += 1;
+            score ++;
         }
 
         //Checking question ten
         if (question10b.isChecked()) {
-            score += 1;
-        } else {
+            score ++;
+        }
+        else {
 
         }
 
         return score;
     }
 
-    //Method  that is called when the retry button is clicked
+    //This resets all the textfields, radio buttons and checkboxes
     public void resetBtn(View view) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -454,6 +424,8 @@ public class MainActivity extends AppCompatActivity {
 
                         score_result ="";
 
+                        name.setText("");
+
                         scores.setText("");
                         scores.setVisibility(View.INVISIBLE);
 
@@ -463,9 +435,7 @@ public class MainActivity extends AppCompatActivity {
 
         builder.create().show();
 
-
     }
-
 
     // This method below hides the keyboard when the user clicks away from the EditText box
 

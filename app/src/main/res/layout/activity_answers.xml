@@ -17,12 +17,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="serif-monospace"
             android:text="@string/heading"
             android:textAllCaps="true"
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size_large"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/textview_width"
+            android:layout_height="@dimen/textview_width"
+            android:src="@drawable/exam_maker"
+            android:layout_gravity="center_horizontal"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -486,7 +491,59 @@
 
 
 
-        </LinearLayout><!--End of question 7-->
+        </LinearLayout><!--End of question 9-->
+
+        <!--Start of question 10-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:background="@drawable/question_bg"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/HeaderTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/ten" />
+
+            <TextView
+                style="@style/Questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question10"
+                android:textSize="@dimen/text_size_medium" />
+
+            <RadioGroup
+                android:id="@+id/question10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/qn10_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:text="@string/q10_a"
+                    android:textSize="@dimen/text_size_small" />
+
+                <RadioButton
+                    android:id="@+id/qn10_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:text="@string/q10_b"
+                    android:textSize="@dimen/text_size_small" />
+
+            </RadioGroup>
+
+
+        </LinearLayout><!--End of question 10-->
 
 
         <LinearLayout

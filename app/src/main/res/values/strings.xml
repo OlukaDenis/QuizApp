@@ -5,6 +5,7 @@
     <string name="heading"><u>Android Quiz</u></string>
     <string name="desc">Each question has a score of <b>one</b> point</string>
     <string name="ans">Your answer</string>
+    <string name="your_name">Enter your name</string>
 
 
     <!--Questions headers-->
@@ -60,7 +61,7 @@
 
 
     <!--The question seven-->
-    <string name="question7">The root element of AndroidManifest.xml is </string>
+    <string name="question7">The root element of AndroidManifest.xml is__________</string>
 
     <!--The question eight-->
     <string name="question8">The first smartphone to run on Android platform was?</string>
@@ -69,8 +70,13 @@
     <string name="q8_c">Nexus </string>
     <string name="q8_d">Samsung</string>
 
-    <!--The question seven-->
-    <string name="question9">We can pass Data between activities using <u>      </u></string>
+    <!--The question nine-->
+    <string name="question9">We can pass Data between activities using__________</string>
+
+    <!--The question ten-->
+    <string name="question10">What is AIDL in Android?</string>
+    <string name="q10_a">Android Interface Design Language</string>
+    <string name="q10_b">Android Interface Definition Language</string>
 
     <!--Button-->
     <string name="btn">Submit answer</string>
@@ -93,4 +99,6 @@
 
     <!--answer to question 9-->
     <string name="answer_qn9">Intents</string>
+
+
 </resources>
