@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -24,6 +24,23 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:padding">5dp</item>
         <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="Answers">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:layout_marginLeft">@dimen/margin_medium</item>
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:onClick">checkName</item>
+    </style>
+
+    <style name="SubmitButons">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/btn</item>
+        <item name="android:padding">@dimen/padding_medium</item>
+        <item name="android:textColor">@color/qn_bg</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
     </style>
 
 </resources>

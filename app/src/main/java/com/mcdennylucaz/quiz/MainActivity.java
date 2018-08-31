@@ -28,15 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
     EditText name;
 
-    CheckBox question1a;
-    CheckBox question1b;
-    CheckBox question1c;
-    CheckBox question1d;
+    RadioGroup question1;
+    RadioButton question1a;
+    RadioButton question1b;
+    RadioButton question1c;
+    RadioButton question1d;
 
-    CheckBox question2a;
-    CheckBox question2b;
-    CheckBox question2c;
-    CheckBox question2d;
+    RadioGroup question2;
+    RadioButton question2a;
+    RadioButton question2b;
+    RadioButton question2c;
+    RadioButton question2d;
 
     EditText question3a;
 
@@ -56,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
     EditText question7a;
 
-    CheckBox question8a;
-    CheckBox question8b;
-    CheckBox question8c;
-    CheckBox question8d;
+    RadioGroup question8;
+    RadioButton question8a;
+    RadioButton question8b;
+    RadioButton question8c;
+    RadioButton question8d;
 
     EditText question9a;
 
@@ -78,15 +81,17 @@ public class MainActivity extends AppCompatActivity {
         //getting reference to the checkboxes
         name = (EditText) findViewById(R.id.username);
 
-        question1a = (CheckBox) findViewById(R.id.qn1_1);
-        question1b = (CheckBox) findViewById(R.id.qn1_2);
-        question1c = (CheckBox) findViewById(R.id.qn1_3);
-        question1d = (CheckBox) findViewById(R.id.qn1_4);
+        question1a = (RadioButton) findViewById(R.id.qn1_1);
+        question1b = (RadioButton) findViewById(R.id.qn1_2);
+        question1c = (RadioButton) findViewById(R.id.qn1_3);
+        question1d = (RadioButton) findViewById(R.id.qn1_4);
+        question1 = (RadioGroup) findViewById(R.id.question1);
 
-        question2a = (CheckBox) findViewById(R.id.qn2_1);
-        question2b = (CheckBox) findViewById(R.id.qn2_2);
-        question2c = (CheckBox) findViewById(R.id.qn2_3);
-        question2d = (CheckBox) findViewById(R.id.qn2_4);
+        question2a = (RadioButton) findViewById(R.id.qn2_1);
+        question2b = (RadioButton) findViewById(R.id.qn2_2);
+        question2c = (RadioButton) findViewById(R.id.qn2_3);
+        question2d = (RadioButton) findViewById(R.id.qn2_4);
+        question2 = (RadioGroup) findViewById(R.id.question2);
 
         question3a = (EditText) findViewById(R.id.question3);
 
@@ -106,10 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
         question7a = (EditText) findViewById(R.id.question7);
 
-        question8a = (CheckBox) findViewById(R.id.qn8_1);
-        question8b = (CheckBox) findViewById(R.id.qn8_2);
-        question8c = (CheckBox) findViewById(R.id.qn8_3);
-        question8d = (CheckBox) findViewById(R.id.qn8_4);
+        question8a = (RadioButton) findViewById(R.id.qn8_1);
+        question8b = (RadioButton) findViewById(R.id.qn8_2);
+        question8c = (RadioButton) findViewById(R.id.qn8_3);
+        question8d = (RadioButton) findViewById(R.id.qn8_4);
+        question8 = (RadioGroup) findViewById(R.id.question_8);
 
         question9a = (EditText) findViewById(R.id.question9);
 
@@ -121,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkName(View view){
         if(name.getText().toString().isEmpty()){
-            name.setError("You must provide your name first before answering \n");
+            name.setError(getString(R.string.must_answer)+"\n");
         }
     }
 
@@ -131,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     public void getAnswer(View view) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
-        builder.setMessage("Are you sure you want to submit?");
+        builder.setMessage(getString(R.string.sure_answer));
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -151,8 +157,8 @@ public class MainActivity extends AppCompatActivity {
                                name.getText().toString().isEmpty()
 
                         ) {
-                          name.setError("You must provide your name first \n");
-                    Toast.makeText(getApplicationContext(), "Please answer all the questions!", Toast.LENGTH_SHORT).show();
+                          name.setError(getString(R.string.must_name)+"\n");
+                    Toast.makeText(getApplicationContext(), getString(R.string.answer_all), Toast.LENGTH_SHORT).show();
                 }
 
                 else {
@@ -268,9 +274,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //This is the array of the total scores and the selected answers
                     String username= name.getText().toString();
+                    //Displaying the scores in a toast message
                     Toast.makeText(MainActivity.this, "Name: "+username+" \nYour points:  " + answers() + "/10 \n\n" + score_result, Toast.LENGTH_LONG).show();
-                    //scores.setText("Name: "+username+" \nYour points:  " + answers() + "/10 \n\n" + score_result);
-                    //scores.setVisibility(View.VISIBLE);
+
                 }
             }
         })
@@ -278,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         builder.setCancelable(true);
-                        Toast.makeText(getApplication(), "Okay, Continue answering", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplication(), getString(R.string.continue_answering), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -292,11 +298,11 @@ public class MainActivity extends AppCompatActivity {
         int score = 0;
 
         //Checking question one
-        if (question1a.isChecked() && !question1b.isChecked() && !question1c.isChecked() && !question1d.isChecked()) {
+        if (question1a.isChecked() ) {
             score ++;
         }
         //Checking question two
-        if (question2a.isChecked() && !question2b.isChecked() && !question2c.isChecked() && !question2d.isChecked()) {
+        if (question2a.isChecked() ) {
             score ++;
         }
 
@@ -307,7 +313,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Checking question four
-        if (question4c.isChecked() && !question4a.isChecked() && !question4b.isChecked() && !question4d.isChecked()) {
+        if ((question4a.isChecked() && question4b.isChecked() && !question4c.isChecked() && !question4d.isChecked()) ||
+                (!question4c.isChecked() && !question4a.isChecked() && !question4b.isChecked() && question4d.isChecked())) {
             score ++;
         }
 
@@ -317,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Checking question six
-        if (question6b.isChecked() && !question6a.isChecked() && !question6c.isChecked() && !question6d.isChecked()) {
+        if (question6a.isChecked() && !question6b.isChecked() && question6c.isChecked() && question6d.isChecked()) {
             score ++;
         }
 
@@ -355,6 +362,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
+        builder.setIcon(R.drawable.ic_action_warning);
         builder.setMessage("\tTRY AGAIN \n");
         builder.setPositiveButton("ANSWERS", new DialogInterface.OnClickListener() {
             @Override
@@ -374,12 +382,12 @@ public class MainActivity extends AppCompatActivity {
                                 question9a.getText().toString().isEmpty()
 
                         ){
-                    Toast.makeText(getApplicationContext(), "You should submit your answers first!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.submit_answers_first), Toast.LENGTH_SHORT).show();
                 } else{
 
                     Intent intent = new Intent(MainActivity.this, Answers.class);
                     startActivity(intent);
-                    Toast.makeText(getApplicationContext(), "These are the expected answers!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.expected_answers), Toast.LENGTH_LONG).show();
                 }
             }
         })
@@ -387,15 +395,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        question1a.setChecked(false);
-                        question1b.setChecked(false);
-                        question1c.setChecked(false);
-                        question1d.setChecked(false);
+                        question1.clearCheck();
 
-                        question2a.setChecked(false);
-                        question2b.setChecked(false);
-                        question2c.setChecked(false);
-                        question2d.setChecked(false);
+                        question2.clearCheck();
 
                         question3a.setText("");
 
@@ -413,10 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
                         question7a.setText("");
 
-                        question8a.setChecked(false);
-                        question8b.setChecked(false);
-                        question8c.setChecked(false);
-                        question8d.setChecked(false);
+                        question8.clearCheck();
 
                         question9a.setText("");
 
@@ -426,10 +425,7 @@ public class MainActivity extends AppCompatActivity {
 
                         name.setText("");
 
-                        scores.setText("");
-                        scores.setVisibility(View.INVISIBLE);
-
-                        Toast.makeText(getApplicationContext(), "Give it another try, this can be your chance", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.try_answering_again), Toast.LENGTH_LONG).show();
                     }
                 });
 

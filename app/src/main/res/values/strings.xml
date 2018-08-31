@@ -39,11 +39,11 @@
     <string name="question3">Who is the founder of Google?</string>
 
     <!--The question four-->
-    <string name="question4">Android Logo is inspired from?</string>
-    <string name="q4_a">Super Mario</string>
-    <string name="q4_b">Roadrush</string>
-    <string name="q4_c">The Gauntlet</string>
-    <string name="q4_d">Contra 4</string>
+    <string name="question4">What are the layouts available in Android?</string>
+    <string name="q4_a">Linear layout</string>
+    <string name="q4_b">Relative layouts</string>
+    <string name="q4_c">None </string>
+    <string name="q4_d">All the above</string>
 
 
     <!--The question five-->
@@ -53,11 +53,11 @@
 
 
     <!--The question six-->
-    <string name="question6">What is ANR in Android?</string>
-    <string name="q6_a">Dialog box is called as ANR</string>
-    <string name="q6_b">Application Not Responding</string>
-    <string name="q6_c">Android Not Responding</string>
-    <string name="q6_d">None of the above</string>
+    <string name="question6">Which of the following directories are found in res folder in Android?</string>
+    <string name="q6_a">drawable</string>
+    <string name="q6_b">photos</string>
+    <string name="q6_c">values</string>
+    <string name="q6_d">layout</string>
 
 
     <!--The question seven-->
@@ -85,20 +85,28 @@
     <string name="back">Back</string>
 
 
-    <!--answer to question 1-->
-    <string name="answer_qn1">Android is a stack of softwares for mobility</string>
+    <string name="must_answer">You must provide your name first before answering</string>
 
-    <!--answer to question 2-->
-    <string name="answer_qn2">finish()</string>
+    <string name="sure_answer">Are you sure you want to submit?</string>
 
-    <!--answer to question 3-->
-    <string name="answer_qn3">Larry Page</string>
+    <string name="must_name">You must provide your name first</string>
 
-    <!--answer to question 7-->
-    <string name="answer_qn7">Manifest</string>
+    <string name="answer_all">Please answer all the questions!</string>
 
-    <!--answer to question 9-->
-    <string name="answer_qn9">Intents</string>
+    <string name="submit_answers_first">You should submit your answers first!</string>
 
+    <string name="expected_answers">These are the expected answers!</string>
+
+    <string name="try_answering_again">Give it another try, this can be your chance!</string>
+
+    <string name="continue_answering">Okay, Continue answering</string>
+
+    <!--Answers-->
+
+    <string name="answer_qn3">Larry Page</string><!--answer of question 3-->
+
+    <string name="answer_qn7">Manifest</string><!--answer of question 7-->
+
+    <string name="answer_qn9">Intents</string><!--answer of question 9-->
 
 </resources>
